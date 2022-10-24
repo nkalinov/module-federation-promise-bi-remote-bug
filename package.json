@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"cd app1; yarn start\" \"cd app2; yarn start\"",
+    "build": "concurrently \"cd app1; yarn build\" \"cd app2; yarn build\"",
+    "serve": "concurrently \"cd app1; yarn serve\" \"cd app2; yarn serve\"",
+    "clean": "concurrently \"cd app1; yarn clean\" \"cd app2; yarn clean\""
+  },
+  "workspaces": {
+    "packages": [
+      "./app1",
+      "./app2"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.5.0"
+  }
+}
